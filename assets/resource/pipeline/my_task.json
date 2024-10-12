@@ -1,5 +1,135 @@
 {
-    "MyTask1": {},
-    "MyTask2": {},
-    "MyTask3": {}
+    "啟動": {
+        "action": "StartApp",
+        "package": "tw.haoplay.game.and.reso",
+        "post_delay": 8000,
+        "next": [
+            "识别并点击确认图标"
+        ]
+    },
+    "识别并点击确认图标": {
+        "recognition": "TemplateMatch",
+        "template": "enter_game__1190_40_39_47__1140_0_139_137.png",
+        "action": "Click",
+        "target": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "post_delay": 5000,
+        "next": [
+            "進入遊戲"
+        ]
+    },
+    "登入email": {
+        "recognition": "TemplateMatch",
+        "template": "login_email__452_355_43_36__402_305_143_136.png",
+        "action": "Click"
+    },
+    "登入資訊(email)": {
+        "recognition": "OCR",
+        "expected": "Email",
+        "action": "Click"
+    },
+    "登入資訊(輸入)": {
+        "recognition": "OCR",
+        "expected": "Email",
+        "action": "InputText",
+        "input_text": "Vincent20170210@gmail.com"
+    },
+    "登入資訊(發送驗證碼)": {
+        "recognition": "OCR",
+        "expected": "發送驗證碼",
+        "action": "Click"
+    },
+    "登入資訊(發送驗證碼後確認)": {
+        "recognition": "OCR",
+        "expected": "發送驗證碼",
+        "action": "Click"
+    },
+    "登入資訊(驗證碼後登入)": {
+        "recognition": "OCR",
+        "expected": "登入",
+        "action": "Click"
+    },
+    "進入遊戲": {
+        "recognition": "TemplateMatch",
+        "template": "start_game__321_267_640_317__271_217_740_417.png",
+        "pre_delay": 5000,
+        "action": "Click",
+        "post_delay": 5000,
+        "next": [
+            "領獎跳脫"
+        ]
+    },
+    "領獎跳脫": {
+        "recognition": "OCR",
+        "expected": "獲得物品",
+        "action": "Click",
+        "on_error": "跳脫每日領獎"
+    },
+    "跳脫每日領獎": {
+        "recognition": "TemplateMatch",
+        "template": "exit_reward__558_660_45_37__508_610_145_110.png",
+        "action": "Click",
+        "on_error": "進入城市"
+    },
+    "進入城市": {
+        "recognition": "TemplateMatch",
+        "template": "enter_city__1091_472_177_44__1041_422_239_144.png",
+        "action": "Click",
+        "post_delay": 5000,
+        "next": [
+            "進入交易站"
+        ]
+    },
+    "進入交易站": {
+        "recognition": "TemplateMatch",
+        "template": "trade_station__500_164_94_29__450_114_194_129.png",
+        "action": "Click",
+        "target": [
+            493.22503662109375,
+            199.69378662109375,
+            112.41250610351562,
+            100.1875
+        ],
+        "next": [
+            "進入價目表"
+        ]
+    },
+    "進入價目表": {
+        "recognition": "TemplateMatch",
+        "template": "trade_buy__747_301_120_50__697_251_220_150.png",
+        "action": "Click"
+    },
+    "OCRToExcel1": {
+        "action": "Custom",
+        "custom_action": "OCRToExcel",
+        "next": [
+            "價目表scroll down"
+        ]
+    },
+    "價目表scroll down": {
+        "action": "Swipe",
+        "begin": [
+            645,
+            545,
+            108,
+            106
+        ],
+        "end": [
+            607,
+            194,
+            103,
+            112
+        ],
+        "next": [
+            "OCRToExcel2"
+        ]
+    },
+    "OCRToExcel2": {
+        "action": "Custom",
+        "custom_action": "OCRToExcel"
+    }
 }
