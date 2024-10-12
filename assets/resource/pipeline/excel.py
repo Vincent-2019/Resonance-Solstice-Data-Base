@@ -14,7 +14,7 @@ def main():
 class OCRToExcelAction(CustomAction):
     def run(
         self, context: Context, argv: CustomAction.RunArg
-    ) -> CustomAction.RunResult:
+    ) -> bool:
 
         print(f"正在执行 OCRToExcelAction.run，context: {context}, argv: {argv}")
 
@@ -23,8 +23,9 @@ class OCRToExcelAction(CustomAction):
 
         # OCR ON
         reco_detail = context.run_recognition(
-            "OCRTask", image=context.tasker.controller.post_screencap().wait().get(), pipeline_override={"OCRTask": {"recognition": "OCR"}}  #Need to set roi
+            "OCRTask", image, pipeline_override={"OCRTask": {"recognition": "OCR"}}  #Need to set roi
         )
+        print(reco_detail) #To test
 
         # 檢查識別結果
         if reco_detail and reco_detail.best_result:
@@ -49,7 +50,7 @@ class OCRToExcelAction(CustomAction):
         else:
             print("未获取到OCR识别结果")
 
-        return CustomAction.RunResult(success=True)
+        return True
 
 if __name__ == "__main__":
     main()
