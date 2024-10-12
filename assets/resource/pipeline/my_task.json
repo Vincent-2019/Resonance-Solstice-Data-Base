@@ -103,6 +103,37 @@
         "template": "trade_buy__747_301_120_50__697_251_220_150.png",
         "action": "Click"
     },
+    "識別藍色定位點": {
+        "recognition": "TemplateMatch",
+        "template": "blue_setpoint__482_140_25_122__432_90_125_222.png"
+    },
+    "定位名稱": {
+        "roi": "識別藍色定位點",
+        "roi_offset": [
+            261.55,
+            10.2,
+            69.6,
+            -93.5996
+        ]
+    },
+    "定位金額": {
+        "roi": "識別藍色定位點",
+        "roi_offset": [
+            297.62,
+            73.2,
+            33.6,
+            -91.1995
+        ]
+    },
+    "價格%數": {
+        "roi": "識別藍色定位點",
+        "roi_offset": [
+            250.8,
+            42,
+            49.2,
+            -91.2
+        ]
+    },
     "OCRToExcel1": {
         "action": "Custom",
         "custom_action": "OCRToExcel",
