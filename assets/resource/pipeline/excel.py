@@ -23,7 +23,7 @@ class OCRToExcelAction(CustomAction):
 
         # OCR ON
         reco_detail = context.run_recognition(
-           "OCRTask", image, pipeline_override={"OCRTask": {"recognition": "OCR"}} #Need to set roi
+           "OCRTask", image, pipeline_override={"OCRTask": {"recognition": "OCR","roi":[ 683, 137, 169, 122]}} #Need to set roi
         )
         print(reco_detail) #To test
         # 檢查識別結果
