@@ -13,10 +13,10 @@
         }
     },
     "controller": {
-        "name": "安卓端"
+        "name": "android"
     },
     "gpu": -1,
-    "resource": "官服",
+    "resource": "official",
     "task": [
         {
             "name": "OCRToExcel",

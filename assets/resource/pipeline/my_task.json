@@ -134,13 +134,6 @@
             -91.2
         ]
     },
-    "OCRToExcel1": {
-        "action": "Custom",
-        "custom_action": "OCRToExcel",
-        "next": [
-            "價目表scroll down"
-        ]
-    },
     "價目表scroll down": {
         "action": "Swipe",
         "begin": [
@@ -154,12 +147,9 @@
             194,
             103,
             112
-        ],
-        "next": [
-            "OCRToExcel2"
         ]
     },
-    "OCRToExcel2": {
+    "OCRToExcel": {
         "action": "Custom",
         "custom_action": "OCRToExcel"
     }
